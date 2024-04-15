@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </head>
+
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+    }
+
+    .nav-logo-text{
+      transform: skew(0,0);
+
+      transition: 0.6s;
+    }
+    .nav-logo-text:hover{
+      transform: skew(30deg,0);
+      
+    }
+    .sec-1 {
+      height: 700px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+
+    .sec-1-h1 {
+      font-size: 60px;
+      background-color: #e4b5cb;
+      background-image: linear-gradient(315deg, #ce719c 0%, #6a1de6 74%);
+      background-clip: text;
+      color: transparent;
+    }
+
+    .sec-1-bt {
+      background-image: linear-gradient(
+        319deg,
+        #663dff 0%,
+        #aa00ff 37%,
+        #cc4499 100%
+      );
+    }
+
+    .sec-1-cus-h {
+      min-height: 644px;
+    }
+
+    .sec-2,
+    .sec-3,
+    .sec-4 {
+      background: radial-gradient(
+        circle,
+        rgba(15, 12, 41, 1) 7%,
+        rgba(15, 14, 31, 1) 53%,
+        rgba(22, 22, 42, 1) 100%
+      );
+    }
+
+    .sec-5{
+      background-image: url(sec-5-b-img.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -2;
+      filter: brightness(1);
+
+    }
+
+    .sec-2-cus-h,
+    .sec-3-cus-h,
+    .sec-4-cus-h {
+      min-height: 650px;
+    }
+
+    .sec-5-cus-h{
+      min-height: 650px;
+    }
+
+
+    .sec-2 h1 {
+      background: radial-gradient(rgb(243, 194, 194), rgba(185, 57, 218, 0.42));
+      background-clip: text;
+      color: transparent;
+      text-transform: capitalize;
+    }
+
+    .sec-3-h1 {
+      margin-right: 100px;
+      background: radial-gradient(rgb(182, 68, 68) 9%, rgb(197, 29, 29) 80%);
+      background-clip: text;
+      color: transparent;
+    }
+
+    .sec-3-bt {
+      border: 2px solid purple;
+      background: linear-gradient(
+        319deg,
+        #663dff 0%,
+        #aa00ff 37%,
+        #cc4499 100%
+      );
+      background-clip: text;
+      color: transparent;
+      margin-right: 160px;
+      transition: 0.6s;
+    }
+
+    .sec-3-bt:hover {
+      transition: 0.8s;
+      background: linear-gradient(
+        319deg,
+        #663dff 0%,
+        #aa00ff 37%,
+        #cc4499 100%
+      );
+      color: white;
+    }
+
+    .sec-3-img-2 {
+      border-top-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+      position: relative;
+      bottom: 450px;
+      left: 230px;
+      z-index: 1;
+    }
+
+    .sec-3-img-3 {
+      border-top-right-radius: 100px;
+      border-bottom-left-radius: 100px;
+      position: relative;
+      bottom: 250px;
+    }
+
+    .dropdown-menu-1 a {
+      color: whitesmoke;
+      text-align: center;
+      transition: 0.6s all;
+    }
+
+    .dropdown ul:hover {
+      display: block;
+    }
+
+    .sec-3-drop-img {
+      float: right;
+    }
+
+    .sec-4-img-1{
+      width: 40rem;
+      border-top-right-radius: 100px; 
+      border-bottom-left-radius: 100px;
+      position: relative;
+      left: 650px;
+    }
+
+    .sec-4-img-2{
+      border-top-right-radius: 100px;
+     border-bottom-left-radius: 100px;
+      width: 20rem;
+      position: relative;
+      left: 1000px;
+      bottom: 150px;   
+    }
+
+    .sec-4-card-1{
+      position: relative;
+      bottom: 400px;
+    }
+
+
+    .sec-4-card-2{
+      background: linear-gradient(90deg, rgba(138,9,47,1) 0%, rgba(104,18,85,1) 35%, rgba(84,11,49,1) 100%);
+      position: relative;
+      bottom: 400px;
+    }
+
+    .sec-4-card-3{
+      position: relative;
+      bottom: 400px;
+    }
+
+    .sec-5-img1{
+      width: 100%;
+      position: relative;
+      top:15%;
+      filter: brightness(0.7);
+    }
+
+    .sec-5-h1{
+      width: 59rem;
+      position: absolute;
+      top: 0px;
+      left: 150px;
+      border-radius: 15px;
+     
+    }
+
+    .sec-5-col{
+      background: linear-gradient(90deg, rgba(138,9,47,1) 0%, rgba(104,18,85,1) 35%, rgba(84,11,49,1) 100%);
+
+    }
+
+    .sec-5-card-1{
+      width: 100%;
+      position: relative;
+      bottom: 330px;
+      left: 150px;
+      border-radius: 25px;
+      filter: grayscale(100%);
+      transition: 0.4s ease-in-out;
+    }
+    
+    .sec-5-card-1:hover{
+      filter: grayscale(0%);
+      transform: scale(1.1);
+      z-index: 1;
+
+    }
+
+    .sec-5-cardbody-1{
+      width: 12rem;
+      height: 9rem;
+      position: relative;
+      bottom: 472px;
+      left: 330px;
+      background-color: #393d5e;
+      border-radius: 30%;
+    }
+
+    .sec-5-img-3{
+      width: 30rem;
+      height: 9rem;
+      position: absolute;
+      top: 33%;
+      left: 34%;
+      border-radius: 30px;
+      filter: brightness(0.7);
+      border: 2px solid black;
+      padding: 1px;
+      transition: 0.6s;
+    }
+
+    
+   .sec-5-img-3:hover{
+    filter: brightness(0.3);
+   }
+
+    .sec-5-img-3-t{
+      text-align: center;
+      position: relative;
+      top: 0%;
+      bottom: 430px;
+    }
+
+    .footer-logo{
+      transform: rotateY(0deg);
+      transition: 0.6s ease-in-out;
+    }
+    .footer-logo:hover{
+      transform: rotateY(160deg);
+
+    }
+
+    h5 {
+    font-size: 1rem;
+    line-height: 1.375;
+  font-family: Rubik,Arial,sans-serif;
+    font-weight: 500;
+    color: whitesmoke;
+}
+
+a {
+  color: #818494;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+
+    @media screen and (max-width: 768px) {
+      .sec-1-cus-h {
+        align-content: center;
+      }
+      .sec-1-h1 {
+        font-size: 50px;
+      }
+      .sec-3-t-medqu {
+        margin-top: 10px;
+        text-align: center;
+        padding-left: 10px;
+      }
+      .sec-3-h1 {
+        margin-right: 85px;
+      }
+      .sec-3-bt {
+        margin-right: 110px;
+      }
+      .sec-3-imgs {
+        align-content: center;
+        margin-top: 100px;
+        padding-left: 40px;
+      }
+      .sec-3-img-1 {
+        border-top-right-radius: 60px;
+        border-end-start-radius: 60px;
+        transition: 0.7s;
+        position: relative;
+        left: 20px;
+      }
+      .sec-3-img-2 {
+        border-top-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+        position: relative;
+        bottom: 200px;
+        left: 158px;
+        transition: 0.7s;
+      }
+      .sec-3-img-3 {
+        border-top-right-radius: 60px;
+        border-bottom-left-radius: 60px;
+        position: relative;
+        bottom: 140px;
+        right: 30px;
+        transition: 0.7s;
+      }
+      .sec-3-img-1:hover {
+        transform: scale(1.1);
+        position: relative;
+        z-index: 2;
+      }
+      .sec-3-img-2:hover {
+        transform: scale(1.1);
+        position: relative;
+        z-index: 2;
+      }
+      .sec-3-img-3:hover {
+        transform: scale(1.1);
+        position: relative;
+        z-index: 2;
+      }
+      .dropdown,
+      .sec-3-video {
+        margin-right: 70px;
+        margin-bottom: 0px;
+      }
+      .sec-4-img-1{
+       width: 18rem;
+       border-top-right-radius: 70px;
+       border-bottom-left-radius: 70px;
+       position: relative;
+      left: 20px;
+      transition: 0.7s;
+      }
+      .sec-4-img-2{
+        width: 10rem;
+       border-top-right-radius: 60px;
+       border-bottom-left-radius: 60px;
+       position: relative;
+      left: 160px;
+      bottom: 70px;
+      transition: 0.7s;
+      }
+      .sec-4-img-1:hover{
+        transform: scale(1.1);
+        z-index: 2;
+      }
+      .sec-4-img-2:hover{
+        transform: scale(1.1);
+        z-index: 1;
+      }
+      .sec-4-card-1{
+      position: relative;
+      bottom: 0px;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+    .sec-4-card-2{
+      position: relative;
+      bottom: 0px;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+    .sec-4-card-3{
+      position: relative;
+      bottom: 0px;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+    .sec-5-img1{
+      width: 100%;
+      margin-top: 5px;
+      border-radius: 15px;
+    }
+    .sec-5-h1{
+      width: 22rem;
+      margin-top: 6px;
+      flex-direction: row;
+      padding: 4px;
+      position: absolute;
+      top: 0px;
+      left: 3px;
+      border-radius: 15px;
+    }
+    .sec-5-card-1{
+      width: 80%;
+      position: relative;
+      bottom: 0px;
+      top: 70px ;
+      left: 30px;
+      border-radius: 25px;
+    }
+  
+    .sec-5-cardbody-1{
+      width: 15rem;
+      height: 9rem;
+      position: relative;
+      bottom: 0px;
+      top: 70px;
+      left: 40px;
+      background-color: #393d5e;
+      border-radius: 8%;
+      margin: 5px;
+    }
+    .sec-5-img-3{
+      width: 21rem;
+      height: 9rem;
+      position: relative;
+      top: 89px;
+      left: 0px;
+      border-radius: 30px;
+      filter: brightness(0.7);
+      border: 2px solid black;
+      padding: 1px;
+    }
+
+    .sec-5-img-3-t{
+      text-align: center;
+      position: relative;
+      top: -20px;
+      bottom: 0px;
+    }
+    }
+  </style>
+  <body>
+    <img class="sec-1 img-fluid" src="./img1.jpg" alt="" />
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand nav-logo-text" href="#"
+          ><span style="color: purple">De3</span>Verse</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end px-3"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link text-uppercase" href="Privacy and policy.html">privacy policy</a>
+            <a class="nav-link text-uppercase" href="Contact form.html">Contact Us</a>
+            <a class="nav-link text-uppercase" href="Faqs.html">faqs</a>
+            <a class="nav-link text-uppercase" href="About us.html">about us</a>
+            <a class="nav-link text-uppercase" href="Sign in form.html">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- section 1 -->
+    <section>
+      <div class="container">
+        <div class="row sec-1-cus-h text-light">
+          <div class="col-12 col-md-6">
+            <h1 class="text-uppercase fw-bold fst-italic pt-5 sec-1-h1">
+              meta verse
+            </h1>
+            <h2 class="pt-4 text-white-50">
+              <span style="color: rgb(39, 39, 153)">Dive Into</span> The World
+            </h2>
+            <p class="pt-4">
+              with virtual technology you can see the digital world feel more
+              real and you can play the game with the new style
+            </p>
+            <button class="btn rounded-3 p-1 px-3 sec-1-bt">Explore Now</button>
+            <button class="btn bg-transparent p-1 px-3 mx-2 border rounded-3">
+              <img src="./sec-1-bt.png" alt="" srcset="" />Learn More >
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 2 -->
+    <section class="sec-2">
+      <div class="container">
+        <div
+          class="row sec-2-cus-h justify-content-center align-content-center text-center text-light"
+        >
+          <div class="col-12 col-md-12">
+            <h1 class="pb-5">how it works</h1>
+          </div>
+          <div class="col-12 col-md-3">
+            <img
+              class="rounded rounded-circle p-3 bg-light"
+              src="./sec-2-wallet.png"
+              alt=""
+              srcset=""
+            />
+            <h3 class="pt-4">Explore</h3>
+            <p class="pt-2 text-white-50">
+              EXPLORE CENTRAL CITY AND VISIT OTHER LAND TO HAVE A WONDERFUL
+              EXPERIENCE
+            </p>
+          </div>
+          <div class="col-12 col-md-3">
+            <img
+              class="rounded rounded-circle p-3 bg-light"
+              src="./sec-2-land.png"
+              alt=""
+              srcset=""
+            />
+            <h3 class="pt-4">Own a Land</h3>
+            <p class="pt-2 text-white-50">
+              PERSONALIZE YOUR LAND WITH DIFFERENT ASSETS SUCH AS HOME, SWIMMING
+              POOLS, YOUR NFTs
+            </p>
+          </div>
+          <div class="col-12 col-md-3">
+            <img
+              class="rounded rounded-circle p-3 bg-light"
+              src="./sec-2-gallery.png"
+              alt=""
+              srcset=""
+            />
+            <h3 class="pt-4">Events and Play</h3>
+            <p class="pt-2 text-white-50">
+              ATTEND, ENJOY AND HOST IN METAVERSE EVENTS AND WE ARE INTRODUCING
+              HUNT AND RACE AS OUR FIRST GAMES
+            </p>
+          </div>
+          <div class="col-12 col-md-3">
+            <img
+              class="rounded rounded-circle p-3 bg-light"
+              src="./sec-2-store.png"
+              alt=""
+              srcset=""
+            />
+            <h3 class="pt-4">Meet Others</h3>
+            <p class="pt-2 text-white-50">
+              MEET OTHERS IN AN INTERACTIVE AND SOCIAL VIRTUAL WORLD, INVITE
+              FRIENDS TO HAVE A VISIT TO YOUR LAND
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 3 -->
+    <section class="sec-3">
+      <div class="container">
+        <div class="row sec-3-cus-h">
+          <div class="col-12 col-md-12 sec-3-t-medqu text-end">
+            <h1 class="sec-3-h1 mb-3">Meta Support</h1>
+            <button
+              class="sec-3-bt bg-transparent rounded rounded-pill p-3 mb-3"
+            >
+              Get a Quote
+            </button>
+          </div>
+          <div class="col-12 col-md-6 sec-3-imgs">
+            <img
+              class="w-75 border border-danger border-1 p-2 sec-3-img-1"
+              style="
+                border-top-right-radius: 100px;
+                border-end-start-radius: 100px;
+              "
+              src="./Sec-3-img-1.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              class="w-50 border border-danger border-1 p-1 sec-3-img-2"
+              src="./sec-3-img-2.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              class="w-50 border border-danger border-1 p-1 sec-3-img-3"
+              src="./sec-3-img-3.jpg"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="dropdown text-end">
+              <button
+                class="btn btn-secondary dropdown-toggle bg-black rounded-4 w-75 p-2"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  class="bg-danger"
+                  src="./sec-3-drop-bt.png"
+                  alt=""
+                  srcset=""
+                />
+                Learning System
+              </button>
+              <ul class="dropdown-menu w-75 bg-black dropdown-menu-1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="embed-responsive embed-responsive-16by9 sec-3-video">
+              <video
+                class="embed-responsive-item w-75 rounded rounded-4 sec-3-drop-img"
+                src="./sec-3-video.mp4"
+                allowfullscreen
+                controls
+              ></video>
+            </div>
+
+            <div class="dropdown text-end">
+              <button
+                class="btn btn-secondary dropdown-toggle bg-black rounded-4 w-75 p-2"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  class="bg-danger"
+                  src="./sec-3-drop-bt.png"
+                  alt=""
+                  srcset=""
+                />
+                Learning System
+              </button>
+              <ul class="dropdown-menu w-75 bg-black dropdown-menu-1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 4 -->
+    <section class="sec-4">
+      <div class="container">
+        <div class="row sec-4-cus-h">
+          <div class="col-12 col-md-6">
+            <h3 class="text-light fw-bold py-3">
+              <span class="text-danger fw-bold"> Play and join events </span> by
+              friends <br />
+              of the Meataverse
+            </h3>
+          </div>
+            <div class="col-12 col-md-12 ">
+            <img class=" sec-4-img-1 border border-danger p-1"  src="sec-4-img-1.jpg" alt="" srcset="">
+          </div>
+          <div class="col-12 col-md-12 ">
+            <img class=" sec-4-img-2 border border-danger p-1" src="sec-4-img-2.jpg" alt="" srcset="">
+          </div>
+          
+          <div class="col-12 col-md-2">
+            <div class="card border sec-4-card-1 py-4 text-center" style="width: 9rem; background-color: #0e1113 ;">
+              <div class="card-body">
+                <img class="card-title bg-danger p-2" style="border-radius: 10px;" src="sec-4-meta.png" alt="" srcset="">
+                <p class="card-text text-light">Connect <br> Wallet</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-2">
+            <div class="card border sec-4-card-2 py-4 text-center" style="width: 9rem; background-color: #0e1113 ;">
+              <div class="card-body">
+                <img class="card-title p-2 bg-danger" style="border-radius: 10px; color: red;" src="sec-4-meta.png" alt="" srcset="">
+                <p class="card-text text-light">Events & <br> Play</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-2">
+            <div class="card border sec-4-card-3 py-4 text-center" style="width: 9rem; background-color: #0e1113 ;">
+              <div class="card-body">
+                <img class="card-title bg-danger p-2" style="border-radius: 10px;" src="sec-4-meta.png" alt="" srcset="">
+                <p class="card-text text-light">Meet <br> Friends</p>
+              </div>
+            </div>
+          </div>
+
+         
+        </div>
+      </div>
+    </section>
+
+    <!-- section 5 // Footer-->
+    <section class="sec-5">
+      <div class="container">
+        <div class="row sec-5-cus-h">
+          <div class="col-12 col-md-12">
+           <img class=" sec-5-img1" src="sec-5-img-1.jpg" alt="" srcset="">
+          </div>
+            <div class="col-12 col-md-2 sec-5-h1">
+              <div class="card border sec-5-col sec-5-h1 py-3 text-center">
+                <div class="card-body">
+                  <h1 class="card-text text-light text-dark fw-bold">Get Started With <span style="color: #95079b;"> META </span> <span class="text-light"> WORLD</span></h1>
+                  <h6 class="card-subtitle mb-2 py-3 text-body-secondary fw-bold">The Meataverse Is The Next Evolution Of Social Connection</h6>
+                </div>
+                <a href="#" class="btn btn-dark py-3 rounded-5 my-1 w-25 align-self-center">Get Started</a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6"> 
+                  <div class="col-md-4">
+                    <img src="sec-5-card-img-1.jpg" class="sec-5-card-1 img-fluid  " alt="...">
+                  </div>
+                  <div class="col-md-8 sec-5-cardbody-1">
+                    <div class="card-body text-center text-light" >
+                      <h5 class="card-title"><br>Events</h5>
+                      <p class="card-text"><br>Join The Events</p>
+                      <p class="card-text"><small class="text-light">887.975 Members</small></p>
+                    </div>
+                  </div>
+                </div>                
+                <div class="col-12 col-md-6"> 
+                  <div class="col-md-4">
+                    <img src="sec-5-card-img-2.jpg" class="sec-5-card-1 img-fluid  " alt="...">
+                  </div>
+                  <div class="col-md-8 sec-5-cardbody-1">
+                    <div class="card-body text-center text-light" >
+                      <h5 class="card-title"><br>Play Games</h5>
+                      <p class="card-text"><br>Play Games With Friends</p>
+                      <p class="card-text"><small class="text-light">346.975 Members</small></p>
+                    </div>
+                  </div>
+                </div>               
+                <div class="col-12 col-md-12">
+                  <div class="sec-5-end-b">
+                    <img class="sec-5-img-3" src="./sec-5-banner-img-1.jpg" alt="" srcset="">
+                    <h3 class="sec-5-img-3-t text-light fw-bold">Meet Your Community <br><br> On <span style="color: purple;"> De3 </span>verse</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+     <!-- Footer -->
+     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+     <footer>
+       <div class="container pt-5 border-bottom">
+         <div class="row">
+           <div class="col-md-3 col-sm-12 mb-3 text-center">
+            <img class="footer-logo" src="./footer-logo-1.png" alt="" srcset="">
+            <h3 class="text-light fw-bold fst-italic">Meta</h3>
+            <h3 class="text-light fw-bold"> <span style="color: purple;">De3</span>verse</h3>
+           </div>
+           
+           <div class="col-md-9 col-sm-12">
+             <div class="col-md-3 col-sm-6 col-6 p-0  mb-3 float-start">
+               <h5 class="mb-4 font-weight-bold text-uppercase">Solutions</h5>
+             <ul class="list-group">
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="">Sales</a></li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="">Project Management</a></li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="">Workforce</a></li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href=""> E-Commerce</a></li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="">Finance</a></li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="">Business Apps</a></li>
+             </ul>
+             </div>
+     
+             <div class="col-md-3 col-6 p-0 mb-3 float-start">
+               <h5 class="mb-4 font-weight-bold text-uppercase">Developers</h5>
+             <ul class="list-group">
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="">Open Source</a></li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="">Technology</a></li>
+             </ul>
+             </div>
+     
+             <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-start">
+               <h5 class="mb-4 font-weight-bold text-uppercase">Company</h5>
+             <ul class="list-group">
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href=""></i>About</a></li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href=""></i> Blog</a></li>
+             </ul>
+             </div>
+     
+             <div class="col-md-3 col-sm-6 col-6 mb-3 p-0  float-start">
+               <h5 class="mb-4 font-weight-bold text-uppercase">Connect</h5>
+             <ul class="list-group">
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                 <a href=""><i class="fa fa-linkedin mr-1"></i> LinkedIn</a>
+               </li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                 <a href=""><i class="fa fa-twitter mr-1"></i> Twitter</a>       
+               </li class="list-group-item bg-transparent border-0 p-0 mb-2">
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2"> 
+                 <a href="/"><i class="fa fa-reddit mr-1"></i> Reddit</a>
+               </li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                 <a href="" target="_blank"><i class="fa fa-google-plus mr-1"></i> Google+</a>
+                 
+               </li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                 <a href="" target="_blank"><i class="fa fa-github mr-1"></i> Github</a>  
+               </li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                 <a href="" target="_blank"><i class="fa fa-medium mr-1"></i> Medium</a>
+               </li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                 <a href="/" target="_blank"><i class="fa fa-facebook mr-1"></i> Facebook</a>
+               </li>
+               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                 <a href="" target="_blank"><i class="fa fa-youtube mr-1"></i> YouTube</a>
+               </li>
+             </ul>
+             </div>
+     
+           </div>
+             <div class="col-md-12">
+               <div class="py-4 d-flex justify-content-center align-items-center">
+                 <a class="mr-4" href="">Privacy & terms</a>
+                 <a href="">Sitemap</a>
+               </div>
+             </div>
+         </div>
+       </div>
+     </footer>
+          </section>
+
+
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
